@@ -1,0 +1,12 @@
+set guioptions-=r
+set guioptions-=R
+set guioptions-=l
+set guioptions-=L
+
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+let mapleader = ","
+map <Leader>, :NERDTreeToggle<CR>

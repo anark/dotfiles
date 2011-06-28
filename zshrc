@@ -1,65 +1,29 @@
-# load our own completion functions
-fpath=(~/.zsh/completion $fpath)
+# Path to your oh-my-zsh configuration.
+export ZSH=$HOME/.oh-my-zsh
 
-# completion
-autoload -U compinit
-compinit
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+export ZSH_THEME="robbyrussell"
 
-# automatically enter directories without cd
-setopt auto_cd
+# Set to this to use case-sensitive completion
+# export CASE_SENSITIVE="true"
 
-# use vim as an editor
-export EDITOR=vim
+# Comment this out to disable weekly auto-update checks
+# export DISABLE_AUTO_UPDATE="true"
 
-# aliases
-if [ -e "$HOME/.aliases" ]; then
-  source "$HOME/.aliases"
-fi
+# Uncomment following line if you want to disable colors in ls
+# export DISABLE_LS_COLORS="true"
 
-# vi mode
-bindkey -v
-bindkey "^F" vi-cmd-mode
-bindkey jj vi-cmd-mode
+# Uncomment following line if you want to disable autosetting terminal title.
+# export DISABLE_AUTO_TITLE="true"
 
-# use incremental search
-bindkey "^R" history-incremental-search-backward
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git)
 
-# add some readline keys back
-bindkey "^A" beginning-of-line
-bindkey "^E" end-of-line
+source $ZSH/oh-my-zsh.sh
 
-# handy keybindings
-bindkey "^P" history-search-backward
-bindkey "^Y" accept-and-hold
-bindkey "^N" insert-last-word
-bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
-
-# expand functions in the prompt
-setopt prompt_subst
-
-# prompt
-export PS1='[${SSH_CONNECTION+"%n@%m:"}%~] '
-
-# ignore duplicate history entries
-setopt histignoredups
-
-# keep TONS of history
-export HISTSIZE=4096
-
-# look for ey config in project dirs
-export EYRC=./.eyrc
-
-# automatically pushd
-setopt auto_pushd
-export dirstacksize=5
-
-# awesome cd movements from zshkit
-setopt AUTOCD
-setopt AUTOPUSHD PUSHDMINUS PUSHDSILENT PUSHDTOHOME
-setopt cdablevars
-
-# Try to correct command line spelling
-setopt CORRECT CORRECT_ALL
-
-# Enable extended globbing
-setopt EXTENDED_GLOB
+# Customize to your needs...
+export PATH=/Users/anark/narwhal/bin:/usr/local/mysql/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Users/anark/.rvm/bin
