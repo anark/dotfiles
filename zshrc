@@ -23,6 +23,11 @@ export ZSH_THEME="nark_cloud"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(rails git ruby)
 
+# aliases
+if [ -e "$HOME/.aliases" ]; then
+  source "$HOME/.aliases"
+fi
+
 source $HOME/.profile
 source $ZSH/oh-my-zsh.sh
 
