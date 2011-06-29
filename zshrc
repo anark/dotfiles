@@ -23,6 +23,7 @@ export ZSH_THEME="cloud"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(rails git ruby)
 
+source $HOME/.profile
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs... Customize to your needs...
