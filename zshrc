@@ -1,11 +1,11 @@
-# Path to your oh-my-zsh configuration.
+#th to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-export ZSH_THEME="robbyrussell"
+export ZSH_THEME="nark_cloud"
 
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
@@ -21,9 +21,15 @@ export ZSH_THEME="robbyrussell"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx ruby)
+plugins=(rails git ruby)
 
+# aliases
+if [ -e "$HOME/.aliases" ]; then
+  source "$HOME/.aliases"
+fi
+
+source $HOME/.profile
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export PATH=/Users/anark/narwhal/bin:/usr/local/mysql/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Users/anark/.rvm/bin
+# Customize to your needs... Customize to your needs...
+
