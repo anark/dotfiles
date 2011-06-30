@@ -10,3 +10,5 @@ map <C-l> <C-w>l
 
 let mapleader = ","
 map <Leader>, :NERDTreeToggle<CR>
+
+nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
