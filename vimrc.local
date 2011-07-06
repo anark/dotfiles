@@ -3,6 +3,8 @@ set guioptions-=R
 set guioptions-=l
 set guioptions-=L
 
+set guifont=Monaco:h12
+
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
@@ -11,4 +13,5 @@ map <C-l> <C-w>l
 let mapleader = ","
 map <Leader>, :NERDTreeToggle<CR>
 
-nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+map <silent> <F5> :let _s=@/<Bar>:%s/\(\S\)\s\+$/\1/e<Bar>:let @/=_s<Bar>:nohl<CR>
+map <F6> %yy%pkJa# <Esc>:s/ do$//<CR>:set nohls<CR>
