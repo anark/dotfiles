@@ -1135,7 +1135,9 @@ function! s:Rake(bang,lnum,arg)
   let old_makeprg = &l:makeprg
   let old_errorformat = &l:errorformat
   try
-    if &l:makeprg !~# 'rake'
+    if exists('b:bundler_root') && b:bundler_root ==# rails#app().path()
+      let &l:makeprg = 'bundle exec rake'
+    else
       let &l:makeprg = 'rake'
     endif
     let &l:errorformat = s:efm_backtrace
@@ -2236,8 +2238,8 @@ function! s:layoutList(A,L,P)
 endfunction
 
 function! s:stylesheetList(A,L,P)
-  let list = rails#app().relglob('app/assets/stylesheets/','**/*.css*','')
-  call map(list,'s:sub(v:val,"\\.css\%(\\.\\w+\)\=$","")')
+  let list = rails#app().relglob('app/assets/stylesheets/','**/*.*','')
+  call map(list,'s:sub(v:val,"\\..*$","")')
   let list += rails#app().relglob('public/stylesheets/','**/*','.css')
   if rails#app().has('sass')
     call extend(list,rails#app().relglob('public/stylesheets/sass/','**/*','.s?ss'))
@@ -2247,8 +2249,8 @@ function! s:stylesheetList(A,L,P)
 endfunction
 
 function! s:javascriptList(A,L,P)
-  let list = rails#app().relglob('app/assets/javascripts/','**/*.js*','')
-  call map(list,'s:sub(v:val,"\\.js\%(\\.\\w+\)*$","")')
+  let list = rails#app().relglob('app/assets/javascripts/','**/*.*','')
+  call map(list,'s:sub(v:val,"\\..*$","")')
   let list += rails#app().relglob("public/javascripts/","**/*",".js")
   return s:completion_filter(list,a:A)
 endfunction
@@ -2676,7 +2678,7 @@ function! s:stylesheetEdit(cmd,...)
   elseif rails#app().has('lesscss') && rails#app().has_file('app/stylesheets/'.name.'.less')
     return s:EditSimpleRb(a:cmd,"stylesheet",name,"app/stylesheets/",".less",1)
   else
-    let types = rails#app().relglob('app/assets/stylesheets/'.name,'.css*','')
+    let types = rails#app().relglob('app/assets/stylesheets/'.name,'.*','')
     if !empty(types)
       return s:EditSimpleRb(a:cmd,'stylesheet',name,'app/assets/stylesheets/',types[0],1)
     else
@@ -2692,7 +2694,7 @@ function! s:javascriptEdit(cmd,...)
   elseif rails#app().has('coffee') && rails#app().has_file('app/scripts/'.name.'.js')
     return s:EditSimpleRb(a:cmd,'javascript',name,'app/scripts/','.js',1)
   else
-    let types = rails#app().relglob('app/assets/javascripts/'.name,'.js*','')
+    let types = rails#app().relglob('app/assets/javascripts/'.name,'.*','')
     if !empty(types)
       return s:EditSimpleRb(a:cmd,'javascript',name,'app/assets/javascripts/',types[0],1)
     else
@@ -3618,7 +3620,7 @@ function! s:BufSyntax()
       syn keyword rubyRailsMethod debugger
       syn keyword rubyRailsMethod alias_attribute alias_method_chain attr_accessor_with_default attr_internal attr_internal_accessor attr_internal_reader attr_internal_writer delegate mattr_accessor mattr_reader mattr_writer superclass_delegating_accessor superclass_delegating_reader superclass_delegating_writer
       syn keyword rubyRailsMethod cattr_accessor cattr_reader cattr_writer class_inheritable_accessor class_inheritable_array class_inheritable_array_writer class_inheritable_hash class_inheritable_hash_writer class_inheritable_option class_inheritable_reader class_inheritable_writer inheritable_attributes read_inheritable_attribute reset_inheritable_attributes write_inheritable_array write_inheritable_attribute write_inheritable_hash
-      syn keyword rubyRailsInclude require_dependency gem
+      syn keyword rubyRailsInclude require_dependency
 
       syn region  rubyString   matchgroup=rubyStringDelimiter start=+\%(:order\s*=>\s*\)\@<="+ skip=+\\\\\|\\"+ end=+"+ contains=@rubyStringSpecial,railsOrderSpecial
       syn region  rubyString   matchgroup=rubyStringDelimiter start=+\%(:order\s*=>\s*\)\@<='+ skip=+\\\\\|\\'+ end=+'+ contains=@rubyStringSpecial,railsOrderSpecial
@@ -3799,91 +3801,6 @@ function! rails#log_syntax()
   hi def link railslogSuccess     Special
   hi def link railslogError       Error
   hi def link railslogHTTP        Special
-endfunction
-
-" }}}1
-" Statusline {{{1
-
-function! s:addtostatus(letter,status)
-  let status = a:status
-  if status !~ 'rails' && status !~ '^%!' && g:rails_statusline
-    let   status=substitute(status,'\C%'.tolower(a:letter),'%'.tolower(a:letter).'%{rails#statusline()}','')
-    if status !~ 'rails'
-      let status=substitute(status,'\C%'.toupper(a:letter),'%'.toupper(a:letter).'%{rails#STATUSLINE()}','')
-    endif
-  endif
-  return status
-endfunction
-
-function! s:BufInitStatusline()
-  if g:rails_statusline
-    if &l:statusline == ''
-      let &l:statusline = &g:statusline
-    endif
-    if &l:statusline == ''
-      let &l:statusline='%<%f %h%m%r%='
-      if &ruler
-        let &l:statusline .= '%-14.(%l,%c%V%) %P'
-      endif
-    endif
-    let &l:statusline = s:InjectIntoStatusline(&l:statusline)
-  endif
-endfunction
-
-function! s:InitStatusline()
-  if g:rails_statusline
-    if &g:statusline == ''
-      let &g:statusline='%<%f %h%m%r%='
-      if &ruler
-        let &g:statusline .= '%-16( %l,%c-%v %)%P'
-      endif
-    endif
-    let &g:statusline = s:InjectIntoStatusline(&g:statusline)
-  endif
-endfunction
-
-function! s:InjectIntoStatusline(status)
-  let status = a:status
-  if status !~ 'rails'
-    let status = s:addtostatus('y',status)
-    let status = s:addtostatus('r',status)
-    let status = s:addtostatus('m',status)
-    let status = s:addtostatus('w',status)
-    let status = s:addtostatus('h',status)
-    if status !~ 'rails'
-      let status=substitute(status,'%=','%{rails#statusline()}%=','')
-    endif
-    if status !~ 'rails' && status != ''
-      let status .= '%{rails#statusline()}'
-    endif
-  endif
-  return status
-endfunction
-
-function! rails#statusline(...)
-  if exists("b:rails_root")
-    let t = rails#buffer().type_name()
-    if t != "" && a:0 && a:1
-      return "[Rails-".t."]"
-    else
-      return "[Rails]"
-    endif
-  else
-    return ""
-  endif
-endfunction
-
-function! rails#STATUSLINE(...)
-  if exists("b:rails_root")
-    let t = rails#buffer().type_name()
-    if t != "" && a:0 && a:1
-      return ",RAILS-".toupper(t)
-    else
-      return ",RAILS"
-    endif
-  else
-    return ""
-  endif
 endfunction
 
 " }}}1
@@ -4450,9 +4367,6 @@ function! RailsBufInit(path)
     " Activate custom syntax
     let &syntax = &syntax
   endif
-  if firsttime
-    call s:BufInitStatusline()
-  endif
   if expand('%:e') == 'log'
     nnoremap <buffer> <silent> R :checktime<CR>
     nnoremap <buffer> <silent> G :checktime<Bar>$<CR>
@@ -4544,7 +4458,7 @@ function! s:BufSettings()
           \."All Files (*.*)\t*.*\n"
   endif
   call self.setvar('&includeexpr','RailsIncludeexpr()')
-  call self.setvar('&suffixesadd', ".rb,.".join(s:view_types,',.').",.css,.js,.yml,.csv,.rake,.sql,.html,.xml")
+  call self.setvar('&suffixesadd', ".rb,.".join(s:view_types,',.'))
   let ft = self.getvar('&filetype')
   if ft =~ '^\%(e\=ruby\|[yh]aml\|javascript\|css\|s[ac]ss\|lesscss\)$'
     call self.setvar('&shiftwidth',2)
@@ -4555,7 +4469,6 @@ function! s:BufSettings()
     endif
   endif
   if ft == 'ruby'
-    call self.setvar('&suffixesadd',".rb,.".join(s:view_types,',.').",.yml,.csv,.rake,s.rb")
     call self.setvar('&define',self.define_pattern())
     " This really belongs in after/ftplugin/ruby.vim but we'll be nice
     if exists('g:loaded_surround') && self.getvar('surround_101') == ''
@@ -4565,9 +4478,7 @@ function! s:BufSettings()
     endif
   elseif ft == 'yaml' || fnamemodify(self.name(),':e') == 'yml'
     call self.setvar('&define',self.define_pattern())
-    call self.setvar('&suffixesadd',".yml,.csv,.rb,.".join(s:view_types,',.').",.rake,s.rb")
   elseif ft =~# '^eruby\>'
-    call self.setvar('&suffixesadd',".".join(s:view_types,',.').",.rb,.css,.js,.html,.yml,.csv")
     if exists("g:loaded_allml")
       call self.setvar('allml_stylesheet_link_tag', "<%= stylesheet_link_tag '\r' %>")
       call self.setvar('allml_javascript_include_tag', "<%= javascript_include_tag '\r' %>")
@@ -4635,8 +4546,8 @@ augroup railsPluginAuto
   autocmd BufWritePost */generators/**            call rails#cache_clear("generators")
   autocmd FileType * if exists("b:rails_root") | call s:BufSettings() | endif
   autocmd Syntax ruby,eruby,yaml,haml,javascript,coffee,railslog if exists("b:rails_root") | call s:BufSyntax() | endif
-  autocmd QuickFixCmdPre  make* call s:push_chdir()
-  autocmd QuickFixCmdPost make* call s:pop_command()
+  autocmd QuickFixCmdPre  *make* call s:push_chdir()
+  autocmd QuickFixCmdPost *make* call s:pop_command()
 augroup END
 
 " }}}1
