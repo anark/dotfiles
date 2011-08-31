@@ -605,6 +605,7 @@ rails-gf	rails.txt	/*rails-gf*
 rails-global-settings	rails.txt	/*rails-global-settings*
 rails-integration	rails.txt	/*rails-integration*
 rails-introduction	rails.txt	/*rails-introduction*
+rails-license	rails.txt	/*rails-license*
 rails-menu	rails.txt	/*rails-menu*
 rails-migrations	rails.txt	/*rails-migrations*
 rails-modelines	rails.txt	/*rails-modelines*
@@ -749,7 +750,6 @@ v_]x	unimpaired.txt	/*v_]x*
 v_]y	unimpaired.txt	/*v_]y*
 vgS	surround.txt	/*vgS*
 vim-colors-solarized	solarized.txt	/*vim-colors-solarized*
-vs	surround.txt	/*vs*
 without	solarized.txt	/*without*
 yS	surround.txt	/*yS*
 ySS	surround.txt	/*ySS*
