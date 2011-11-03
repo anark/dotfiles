@@ -1,6 +1,6 @@
 [user]
-	name = anark
-	email = anark@comcast.net
+	name = Andrew Narkewicz
+	email = anark@corknine.com
 [alias]
   st = status
   ci = commit
@@ -39,4 +39,5 @@
 [github]
 	user = anark
 [push]
-    default = tracking
+  default = tracking
+	token = cfa2ad1fc93e072e2409870c889de14b
