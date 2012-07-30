@@ -1,2 +1,8 @@
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$HOME/bin:$PATH"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+function gemo {
+  dir=$PWD;
+  bundle_dir=`bundle show $1`;
+  echo $bundle_dir;
+  cd $bundle_dir;
+  mvim .;
+  cd $dir;
+}

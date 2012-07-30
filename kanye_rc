@@ -1,6 +1,0 @@
-username: anark6
-pages: 10
-path: /Users/anark/Music/Kanye
-db: /Users/anark/Music/Kanye/.history.db
-playlist: true
-playlist_template: "Hypem {{month}} {{year}}"

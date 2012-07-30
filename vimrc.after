@@ -1,8 +1,3 @@
-" In General
-set nocompatible
-set hidden
-set visualbell
-
 " Hide scrollbars
 set guioptions-=r
 set guioptions-=R
@@ -12,7 +7,9 @@ set guioptions-=L
 " Always hide the toolbar
 set guioptions-=T
 
-set mouse=a
+" Use vimux for vroom
+let g:vroom_use_vimux = 1
+let g:vroom_use_colors = 1
 
 " Font Stuff
 set guifont=Monaco:h12
@@ -20,26 +17,14 @@ set linespace=2
 
 " Always show line numbers
 set number
-"
+
 " Always show the status line
 set ls=2
 
-" Keep 3 lines when scrolling
-set scrolloff=3
-"
-" Highlight searches
-set hlsearch
-set incsearch
-set ignorecase
-set cursorline
-set autoindent
-set smartindent
-set nowrap
-
 " Quick cycling between windows
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+map <c-h> <C-w>h
+map <c-j> <C-w>j
+map <c-k> <C-w>k
+map <c-l> <C-w>l
 
 color desert
