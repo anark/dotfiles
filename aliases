@@ -1,7 +1,7 @@
 alias migrate="rake db:migrate db:test:prepare"
 alias remigrate="rake db:migrate && rake db:migrate:redo && rake db:schema:dump db:test:prepare"
 alias g="git"
-alias s="bundle exec rspec"
+alias s="bundle exec rspec --color --format doc"
 alias cuc="bundle exec cucumber"
 alias b="bundle"
 alias be="bundle exec"
