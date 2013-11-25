@@ -1,1 +1,1 @@
-call janus#disable_plugin('snipmate-snippets')
+call janus#disable_plugin('snipmate')
