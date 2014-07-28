@@ -1,0 +1,9 @@
+machine api.heroku.com
+  login anark6@gmail.com
+  password 681e4397-fce6-4c07-bb1a-0a7050cbbfef
+machine code.heroku.com
+  login anark6@gmail.com
+  password 681e4397-fce6-4c07-bb1a-0a7050cbbfef
+machine api.github.com
+  login anark
+  password c9e6440b30f8521ea3712f43d9aca41b5e902b41
