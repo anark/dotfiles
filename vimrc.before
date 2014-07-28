@@ -1,1 +1,2 @@
 call janus#disable_plugin('vim-snippets')
+call janus#disable_plugin('snipmate')
