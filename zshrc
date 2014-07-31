@@ -52,3 +52,5 @@ export NVM_DIR="/Users/andrewnarkewicz/.nvm"
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion # Load nvm autocompletion
 
 bindkey -v
+
+bindkey "^R" history-incremental-search-backward
