@@ -1,0 +1,10 @@
+authtoken: 35MHkQW9ffXmynYTZtofH_2NuMzx1qjJv98vFoQG9qR
+tunnels:
+  charge-rabbit:
+    addr: localhost:4000
+    proto: http
+    subdomain: charge-rabbit-dev
+  sky-pilot:
+    addr: localhost:3000
+    proto: http
+    subdomain: sky-pilot-dev
