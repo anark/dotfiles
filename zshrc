@@ -40,17 +40,14 @@ source $HOME/.profile
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+export PATH="$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 export NVM_DIR="/Users/andrewnarkewicz/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion # Load nvm autocompletion
+[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion # Loads nvm autocompletion
 
 bindkey -v
-
 bindkey "^R" history-incremental-search-backward

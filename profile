@@ -15,3 +15,4 @@ export AWS_CLOUDFORMATION_HOME="/usr/local/Library/LinkedKegs/aws-cfn-tools/jars
 export AWS_CREDENTIAL_FILE="$HOME/.aws_credentials"
 
 export PATH=$PATH:$EC2_HOME/bin
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
