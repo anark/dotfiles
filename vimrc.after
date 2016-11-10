@@ -33,3 +33,6 @@ map <c-l> <C-w>l
 " Color Stuff
 set t_Co=256
 color ir_black
+
+" Turn = into lets
+map <Leader>l :s/\(\w\+\)\s\+=\s\+\(.\+\)/let(:\1) { \2 }<CR>:nohlsearch<CR>
