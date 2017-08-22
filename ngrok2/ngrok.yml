@@ -8,6 +8,10 @@ tunnels:
     addr: localhost:3000
     proto: http
     subdomain: sky-pilot-dev
+  attribution-shopify:
+    addr: localhost:9292
+    proto: http
+    subdomain: attribution-shopify
   rewardstream:
     addr: localhost:3000
     proto: http
