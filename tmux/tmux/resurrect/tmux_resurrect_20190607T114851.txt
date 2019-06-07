@@ -1,0 +1,8 @@
+pane	ollieorder-0	1	:zsh	0	:-	1	:/Users/andrewnarkewicz/Development/ollieorder	1	zsh	:
+pane	ollieorder-0	2	:nvim	1	:*Z	1	:/Users/andrewnarkewicz/Development/ollieorder	1	nvim	:nvim .
+pane	ollieorder-0	2	:nvim	1	:*Z	2	:/Users/andrewnarkewicz/Development/ollieorder	0	zsh	:
+pane	ollieorder-0	2	:nvim	1	:*Z	3	:/Users/andrewnarkewicz/Development/ollieorder	0	ruby	:puma 3.12.1 (tcp://localhost:3000) [ollieorder]  
+pane	ollieorder-0	2	:nvim	1	:*Z	4	:/Users/andrewnarkewicz/Development/ollieorder	0	node	:node /Users/andrewnarkewicz/Development/ollieorder/node_modules/.bin/webpack-dev-server --config /Users/andrewnarkewicz/Development/ollieorder/config/webpack/development.js
+window	ollieorder-0	1	0	:-	ccff,318x76,0,0,2
+window	ollieorder-0	2	1	:*Z	a000,318x76,0,0[318x62,0,0{249x62,0,0,1,68x62,250,0,5},318x13,0,63{159x13,0,63,0,158x13,160,63,4}]
+state	ollieorder-0	

@@ -1,0 +1,16 @@
+# This tmux statusbar config was created by tmuxline.vim
+# on Fri, 07 Jun 2019
+
+set -g message-command-style "fg=colour234,bg=colour241"
+set -g pane-active-border-style "fg=colour245"
+set -g status-style "none,bg=colour237"
+set -g message-style "fg=colour234,bg=colour241"
+set -g pane-border-style "fg=colour241"
+setw -g window-status-style "none,fg=colour243,bg=colour237"
+set -g status-left "#[fg=colour234,bg=colour245] #S #[fg=colour245,bg=colour237,nobold,nounderscore,noitalics]"
+set -g status-right "#[fg=colour241,bg=colour237,nobold,nounderscore,noitalics]#[fg=colour234,bg=colour241] %Y-%m-%d  %H:%M #[fg=colour245,bg=colour241,nobold,nounderscore,noitalics]#[fg=colour234,bg=colour245] #h "
+setw -g window-status-format "#[fg=colour243,bg=colour237] #I #[fg=colour243,bg=colour237] #W "
+setw -g window-status-current-format "#[fg=colour237,bg=colour241,nobold,nounderscore,noitalics]#[fg=colour234,bg=colour241] #I #[fg=colour234,bg=colour241] #W #[fg=colour241,bg=colour237,nobold,nounderscore,noitalics]"
+
+set -g @prefix_highlight_fg 'colour247'
+set -g @prefix_highlight_bg 'colour241'

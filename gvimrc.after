@@ -1,5 +1,0 @@
-" Dont use vimux if using macvim
-let g:vroom_use_vimux = 0
-let g:vroom_use_colors = 0
-
-color ir_black

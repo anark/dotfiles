@@ -29,14 +29,16 @@ ZSH_THEME="cloud"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git tmux nvm rbenv heroku)
+
+# Use nvim as the default editor
+export EDITOR=nvim
 
 # aliases
 if [ -e "$HOME/.aliases" ]; then
   source "$HOME/.aliases"
 fi
 
-source $HOME/.profile
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
@@ -45,9 +47,10 @@ export PATH="$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-export NVM_DIR="/Users/andrewnarkewicz/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion # Loads nvm autocompletion
-
+# Enable vim style motions
 bindkey -v
+bindkey jk vi-cmd-mode
+
+# Recursive history searching
 bindkey "^R" history-incremental-search-backward
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

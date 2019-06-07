@@ -1,5 +1,0 @@
---type-set=css=.css
---type-set=sql=.sql
---type-set=ruby=.rb,.haml,.rake,.feature,.sass,.erb
---type=nosql
---type=nocss
