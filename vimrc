@@ -9,19 +9,21 @@ Plug 'tpope/vim-fugitive'                   " Git utilities
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } "fuzzy file finder
 Plug 'junegunn/fzf.vim'                     "fuzzy file finder
-Plug 'w0rp/ale'                             "asyncronous linting
 Plug 'sheerun/vim-polyglot'                 "autoloading of syntax highlighting
 Plug 'tpope/vim-commentary'                 "gc for commenting code blocks
 Plug 'mileszs/ack.vim'
-Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-surround'
+" Not needed when using coc
+" Plug 'w0rp/ale'                             "asyncronous linting
+" Plug 'mhinz/vim-signify'
 
 " formatting
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " Theming
 Plug 'cocopon/iceberg.vim'
+Plug 'jeffkreeftmeijer/vim-dim'
 
 " Completion
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
@@ -101,8 +103,12 @@ map <c-l> <C-w>l
 
 " Appearance
 " ---------------------------------------------------------------------
-set termguicolors background=dark
 syntax enable
+
+" Use dim colorscheme and remove termguicolors to use colors from terminal
+" colorscheme dim
+
+set termguicolors background=dark
 colorscheme iceberg
 let g:lightline = { 'colorscheme': 'iceberg' }
 

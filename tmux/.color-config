@@ -14,3 +14,6 @@ setw -g window-status-current-format "#[fg=colour237,bg=colour241,nobold,nounder
 
 set -g @prefix_highlight_fg 'colour247'
 set -g @prefix_highlight_bg 'colour241'
+
+set -g window-style 'fg=colour247,bg=colour236'
+set -g window-active-style 'fg=colour250,bg=black'

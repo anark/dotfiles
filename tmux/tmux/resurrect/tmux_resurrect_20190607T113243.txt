@@ -1,7 +1,0 @@
-pane	ollieorder-0	1	:nvim	1	:*	1	:/Users/andrewnarkewicz/Development/ollieorder	0	nvim	:nvim .
-pane	ollieorder-0	1	:nvim	1	:*	2	:/Users/andrewnarkewicz/Development/ollieorder	1	nvim	:nvim /Users/andrewnarkewicz/.vimrc
-pane	ollieorder-0	2	:node	0	:-	1	:/Users/andrewnarkewicz/Development/ollieorder	0	ruby	:puma 3.12.1 (tcp://localhost:3000) [ollieorder]  
-pane	ollieorder-0	2	:node	0	:-	2	:/Users/andrewnarkewicz/Development/ollieorder	1	node	:node /Users/andrewnarkewicz/Development/ollieorder/node_modules/.bin/webpack-dev-server --config /Users/andrewnarkewicz/Development/ollieorder/config/webpack/development.js
-window	ollieorder-0	1	1	:*	ea5f,318x76,0,0{191x76,0,0,0,126x76,192,0,1}
-window	ollieorder-0	2	0	:-	d19a,318x76,0,0{159x76,0,0,2,158x76,160,0,3}
-state	ollieorder-0	
