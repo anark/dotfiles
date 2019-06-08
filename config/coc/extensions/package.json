@@ -1,7 +1,6 @@
 {
   "dependencies": {
     "coc-json": "^1.0.17",
-    "coc-snippets": "^2.0.15",
     "coc-tsserver": "^1.2.6"
   }
 }
