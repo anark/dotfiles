@@ -26,7 +26,7 @@ Plug 'cocopon/iceberg.vim'
 Plug 'jeffkreeftmeijer/vim-dim'
 
 " Completion
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 " File browsing
@@ -55,9 +55,8 @@ cnoremap jk <C-c>
 " Autocomplete
 " --------------------------------------------------------------------
 " Enable autocomplete on startup
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-inoremap <expr><S-Tab> pumvisible() ? "\<c-p>" : "\<S-Tab>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr><C-j> pumvisible() ? "\<c-n>" : "\<C-j>"
+inoremap <expr><C-k> pumvisible() ? "\<c-p>" : "\<C-k>"
 
 " Prettier
 " ---------------------------------------------------------------------

@@ -1,3 +1,4 @@
 vim/backup
 tmux/plugins
 tmux/tmux/resurrect
+node_modules
