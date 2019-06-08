@@ -514,9 +514,9 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>230 833 592 584 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 2402 1417 0 0 2560 1417 </string>
+	<string>60 0 1610 1177 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>855 0 1610 1417 0 0 2560 1417 </string>
+	<string>276 130 1610 1177 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>250 73 570 451 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -1194,14 +1194,16 @@
 			</dict>
 			<key>Selection Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.12941176470588237</real>
+				<real>0.595916748046875</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.094117647058823528</real>
+				<real>0.42460274525644304</real>
 				<key>Red Component</key>
-				<real>0.086274509803921567</real>
+				<real>0.38653297489508986</real>
 			</dict>
 			<key>Semantic History</key>
 			<dict>
@@ -1370,7 +1372,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>493666499.07284701</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>46</integer>
+	<integer>51</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>575418250.13409197</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -2153,7 +2155,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-06-07T02:10:11Z</date>
+	<date>2019-06-08T04:25:08Z</date>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -3786,5 +3788,9 @@
 	<false/>
 	<key>iTerm Version</key>
 	<string>3.3.0beta10</string>
+	<key>kCPKSelectionViewPreferredModeKey</key>
+	<integer>0</integer>
+	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
+	<false/>
 </dict>
 </plist>

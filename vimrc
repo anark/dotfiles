@@ -9,7 +9,9 @@ Plug 'tpope/vim-fugitive'                   " Git utilities
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } "fuzzy file finder
 Plug 'junegunn/fzf.vim'                     "fuzzy file finder
-Plug 'sheerun/vim-polyglot'                 "autoloading of syntax highlighting
+" Plug 'Shougo/denite.nvim'
+" Plug 'neoclide/coc-denite'
+
 Plug 'tpope/vim-commentary'                 "gc for commenting code blocks
 Plug 'mileszs/ack.vim'
 Plug 'itchyny/lightline.vim'
@@ -23,12 +25,16 @@ Plug 'cocopon/iceberg.vim'
 Plug 'jeffkreeftmeijer/vim-dim'
 
 " Completion
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 " File browsing
 Plug 'scrooloose/nerdtree', { 'on': [ 'NERDTreeToggle', 'NERDTreeFind' ] }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': [ 'NERDTreeToggle', 'NERDTreeFind' ] }
+
+" File types
+Plug 'sheerun/vim-polyglot'                 "autoloading of syntax highlighting
+Plug 'peitalin/vim-jsx-typescript'          " currently needed to for filetype for tsx to typescript.tsx/typescript react so I don't get 10000 error.  I'm sure theres a better way to do this
 
 call plug#end()
 
@@ -49,11 +55,21 @@ endif
 inoremap jk <Esc>
 cnoremap jk <C-c>
 
+if has("nvim")
+  inoremap <ESC> <C-\><C-n>
+  tnoremap jk <C-\><C-n>
+endif
+
 " Autocomplete and COC
 " --------------------------------------------------------------------
-nmap <silent> <leader>dd <Plug>(coc-definition)
-nmap <silent> <leader>dr <Plug>(coc-references)
-nmap <silent> <leader>dj <Plug>(coc-implementation)
+autocmd FileType typescript,javascript map <buffer> <silent> <C-]> <Plug>(coc-definition)
+autocmd FileType typescript,javascript map <buffer> <silent> <leader>r <Plug>(coc-rename)
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+map <silent> <Leader>e :CocList diagnostics<cr>
+map <silent> <Leader>l :CocList<CR>
 
 " Use vim style navigation of autocomplete options
 inoremap <expr><C-j> pumvisible() ? "\<c-n>" : "\<C-j>"
@@ -71,7 +87,8 @@ function! s:check_back_space() abort
 endfunction
 let g:coc_snippet_next = '<tab>'
 
-" Autoformatting.  Now handled by coc
+" Ale autoformatting and linting.  Can use coc insteead with coc-prettier and
+" coc-eslint
 " ---------------------------------------------------------------------
 " Run prettier before saving
 " let g:ale_linters = {
@@ -83,6 +100,7 @@ let g:coc_snippet_next = '<tab>'
 "   \ 'javascript': ['prettier'],
 " \}
 " let g:ale_fix_on_save = 1
+" let g:ale_completion_enabled = 0
 
 " NERDTree
 " ---------------------------------------------------------------------
@@ -94,7 +112,7 @@ let g:NERDTreeRespectWildIgnore = 1
 function! ToggleNerdTree()
   if @% !=# '' && (!exists('g:NERDTree') || (g:NERDTree.ExistsForTab() && !g:NERDTree.IsOpen()))
     :NERDTreeFind
-  else 
+  else
     :NERDTreeToggle
   endif
 endfunction
@@ -129,7 +147,15 @@ syntax enable
 
 set termguicolors background=dark
 colorscheme iceberg
-let g:lightline = { 'colorscheme': 'iceberg' }
+let g:lightline = { 'colorscheme': 'iceberg',
+      \  'active': {
+      \    'left': [ [ 'mode', 'paste' ],
+      \              [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
+      \  },
+      \  'component_function': {
+      \    'cocstatus': 'coc#status'
+      \  },
+      \}
 
 " Always show line numbers
 set number

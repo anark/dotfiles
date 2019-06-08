@@ -2,5 +2,8 @@
   "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript"],
   "suggest.noselect": false,
   "suggest.enablePreview": true,
-  "codeLens.enable": true
+  "codeLens.enable": false,
+  "snippets.priority": 150,
+  "javascript.suggest.enabled": false,
+  "typescript.suggest.enabled": true
 }
