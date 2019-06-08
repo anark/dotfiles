@@ -18,9 +18,6 @@ Plug 'tpope/vim-surround'
 " Plug 'w0rp/ale'                             "asyncronous linting
 " Plug 'mhinz/vim-signify'
 
-" formatting
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-
 " Theming
 Plug 'cocopon/iceberg.vim'
 Plug 'jeffkreeftmeijer/vim-dim'
@@ -74,11 +71,18 @@ function! s:check_back_space() abort
 endfunction
 let g:coc_snippet_next = '<tab>'
 
-" Prettier
+" Autoformatting.  Now handled by coc
 " ---------------------------------------------------------------------
 " Run prettier before saving
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+" let g:ale_linters = {
+"   \ 'javascript': ['eslint'],
+" \}
+"
+" let g:ale_fixers = {
+"   \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+"   \ 'javascript': ['prettier'],
+" \}
+" let g:ale_fix_on_save = 1
 
 " NERDTree
 " ---------------------------------------------------------------------

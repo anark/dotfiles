@@ -1,4 +1,5 @@
 {
+  "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript"],
   "suggest.noselect": false,
   "suggest.enablePreview": true,
   "codeLens.enable": true
