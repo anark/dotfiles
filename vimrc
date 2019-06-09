@@ -20,6 +20,9 @@ Plug 'tpope/vim-surround'
 " Plug 'w0rp/ale'                             "asyncronous linting
 " Plug 'mhinz/vim-signify'
 
+" Language specific 
+Plug 'tpope/vim-rails'
+
 " Theming
 Plug 'cocopon/iceberg.vim'
 Plug 'jeffkreeftmeijer/vim-dim'
