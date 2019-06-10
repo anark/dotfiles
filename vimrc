@@ -60,7 +60,8 @@ cnoremap jk <C-c>
 
 if has("nvim")
   inoremap <ESC> <C-\><C-n>
-  tnoremap jk <C-\><C-n>
+  " tnoremap jk <C-\><C-n>
+  tnoremap <expr> jk (&filetype == "fzf") ? "<Esc>" : "<C-\><C-n>"
 endif
 
 " Autocomplete and COC
