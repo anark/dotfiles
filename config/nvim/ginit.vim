@@ -1,0 +1,1 @@
+VimRSetFontAndSize "Monaco", 14

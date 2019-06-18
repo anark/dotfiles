@@ -1,9 +1,10 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "typescriptreact"],
+  //"coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "typescriptreact"],
   "suggest.noselect": false,
   "suggest.enablePreview": true,
   "codeLens.enable": false,
   "snippets.priority": 150,
   "javascript.suggest.enabled": false,
-  "typescript.suggest.enabled": true
+  "typescript.suggest.enabled": true,
+  "typescript.preferences.noSemicolons": true
 }

@@ -25,6 +25,7 @@ Plug 'tpope/vim-rails'
 
 " Theming
 Plug 'cocopon/iceberg.vim'
+Plug 'joshdick/onedark.vim'
 Plug 'jeffkreeftmeijer/vim-dim'
 
 " Completion
@@ -68,6 +69,9 @@ endif
 " --------------------------------------------------------------------
 autocmd FileType typescript,javascript map <buffer> <silent> <C-]> <Plug>(coc-definition)
 autocmd FileType typescript,javascript map <buffer> <silent> <leader>r <Plug>(coc-rename)
+
+" Create :Prettier command to format file
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
@@ -150,7 +154,9 @@ syntax enable
 " colorscheme dim
 
 set termguicolors background=dark
+" colorscheme onedark
 colorscheme iceberg
+
 let g:lightline = { 'colorscheme': 'iceberg',
       \  'active': {
       \    'left': [ [ 'mode', 'paste' ],
@@ -165,5 +171,4 @@ let g:lightline = { 'colorscheme': 'iceberg',
 set number
 
 " Font Stuff
-set guifont=Monaco:h13
 set linespace=2
