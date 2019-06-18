@@ -23,10 +23,14 @@ Plug 'tpope/vim-surround'
 " Language specific 
 Plug 'tpope/vim-rails'
 
-" Theming
-Plug 'cocopon/iceberg.vim'
-Plug 'joshdick/onedark.vim'
-Plug 'jeffkreeftmeijer/vim-dim'
+" Theming and colours
+" Plug 'cocopon/iceberg.vim'
+" Plug 'tyrannicaltoucan/vim-quantum'
+Plug 'patstockwell/vim-monokai-tasty'
+
+" 16 colour themes for terminal colours
+" Plug 'chriskempson/base16-vim'
+" Plug 'noahfrederick/vim-noctu'
 
 " Completion
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
@@ -38,7 +42,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': [ 'NERDTreeToggle', 'NERDTreeFind' ]
 
 " File types
 Plug 'sheerun/vim-polyglot'                 "autoloading of syntax highlighting
-Plug 'peitalin/vim-jsx-typescript'          " currently needed to for filetype for tsx to typescript.tsx/typescript react so I don't get 10000 error.  I'm sure theres a better way to do this
+Plug 'HerringtonDarkholme/yats.vim'
 
 call plug#end()
 
@@ -67,8 +71,8 @@ endif
 
 " Autocomplete and COC
 " --------------------------------------------------------------------
-autocmd FileType typescript,javascript map <buffer> <silent> <C-]> <Plug>(coc-definition)
-autocmd FileType typescript,javascript map <buffer> <silent> <leader>r <Plug>(coc-rename)
+autocmd FileType typescript,javascript,typescript.tsx map <buffer> <silent> <C-]> <Plug>(coc-definition)
+autocmd FileType typescript,javascript,typescript.tsx map <buffer> <silent> <leader>r <Plug>(coc-rename)
 
 " Create :Prettier command to format file
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -150,14 +154,28 @@ map <c-l> <C-w>l
 " ---------------------------------------------------------------------
 syntax enable
 
-" Use dim colorscheme and remove termguicolors to use colors from terminal
-" colorscheme dim
+" Use 16 color colorscheme and remove termguicolors to use colors from terminal
+" colorscheme base16
+" colorscheme noctu
 
-set termguicolors background=dark
-" colorscheme onedark
-colorscheme iceberg
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+else
+  set t_Co=256
+endif
 
-let g:lightline = { 'colorscheme': 'iceberg',
+colorscheme vim-monokai-tasty
+
+" colorscheme quantum
+" let g:quantum_black=1
+
+" colorscheme iceberg
+
+" let g:lightline = { 'colorscheme': 'iceberg',
+" let g:lightline = { 'colorscheme': 'quantum',
+let g:lightline = { 'colorscheme': 'monokai_tasty',
       \  'active': {
       \    'left': [ [ 'mode', 'paste' ],
       \              [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
