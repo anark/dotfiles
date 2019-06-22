@@ -1,0 +1,10 @@
+{
+    "workbench.colorTheme": "One Dark Pro Monokai Darker",
+    "vim.easymotion": true,
+    "editor.rulers": [120],
+    "editor.minimap.enabled": false,
+    "editor.fontSize": 14,
+    "terminal.external.osxExec": "iTerm.App",
+    "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
+    "workbench.editor.showTabs": false
+}
