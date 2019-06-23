@@ -5,6 +5,29 @@
     "editor.minimap.enabled": false,
     "editor.fontSize": 14,
     "terminal.external.osxExec": "iTerm.App",
-    "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
-    "workbench.editor.showTabs": false
+    "workbench.editor.showTabs": false,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "f"],
+            "commands": [
+                "workbench.action.quickOpen"
+            ]
+        },
+        {
+            "before": ["<leader>", "n"],
+            "commands": [
+                "workbench.files.action.focusFilesExplorer"
+            ]
+        }
+    ],
+    "vim.leader": ";",
+    "vim.useSystemClipboard": true,
+    "editor.tabSize": 2,
+    "editor.tabCompletion": "on",
 }

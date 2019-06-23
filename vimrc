@@ -16,6 +16,11 @@ Plug 'tpope/vim-commentary'                 "gc for commenting code blocks
 Plug 'mileszs/ack.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-surround'
+
+" In Probationary period
+Plug 'jiangmiao/auto-pairs'                 " Auto close parenthesis
+Plug 'tpope/endwise'                        " Auto ruby methods with ends
+
 " Not needed when using coc
 " Plug 'w0rp/ale'                             "asyncronous linting
 " Plug 'mhinz/vim-signify'
@@ -34,7 +39,6 @@ Plug 'patstockwell/vim-monokai-tasty'
 
 " Completion
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
-" Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 " File browsing
 Plug 'scrooloose/nerdtree', { 'on': [ 'NERDTreeToggle', 'NERDTreeFind' ] }
@@ -190,3 +194,4 @@ set number
 
 " Font Stuff
 set linespace=2
+" TODO:  Set nice font either here or in Gvimrc
