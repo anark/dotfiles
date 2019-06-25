@@ -6,3 +6,4 @@ config/configstore
 config/coc/extensions
 config/coc/memos.json
 config/coc/history.json
+config/nvim/.netrwhist

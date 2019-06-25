@@ -29,7 +29,8 @@ Plug 'tpope/vim-rails'
 " Theming and colours
 " Plug 'cocopon/iceberg.vim'
 " Plug 'tyrannicaltoucan/vim-quantum'
-Plug 'patstockwell/vim-monokai-tasty'
+" Plug 'patstockwell/vim-monokai-tasty'
+Plug 'joshdick/onedark.vim'
 
 " 16 colour themes for terminal colours
 " Plug 'chriskempson/base16-vim'
@@ -52,8 +53,8 @@ let mapleader=';'
 set updatetime=100
 
 set smartcase                " Smarter searchin based on case if we search with case
-"set clipboard+=unnamed       " Yank to the system clipboard. 'unnamed' works in neovim _and_ MacVim. Makes nvim very slow to start :(
-"set undofile                 " Use undo files for persistent undo
+set clipboard+=unnamed       " Yank to the system clipboard. 'unnamed' works in neovim _and_ MacVim. Makes nvim very slow to start :(
+set undofile                 " Use undo files for persistent undo
 
 " Ag for grepping (https://github.com/ggreer/the_silver_searcher)
 if executable('ag')
@@ -116,7 +117,7 @@ let g:coc_snippet_next = '<tab>'
 " let g:ale_fix_on_save = 1
 " let g:ale_completion_enabled = 0
 
-" NERDTree
+"" NERDTree
 " ---------------------------------------------------------------------
 let g:NERDTreeAutoDeleteBuffer=1
 let g:NERDTreeMinimalUI=1
@@ -133,7 +134,6 @@ endfunction
 
 " Start NERDTree when opening a directory
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTreeToggle' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 
 " Quit vim if only NERDtree is open
 " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -168,16 +168,20 @@ else
   set t_Co=256
 endif
 
-colorscheme vim-monokai-tasty
+" colorscheme vim-monokai-tasty
 
 " colorscheme quantum
 " let g:quantum_black=1
 
 " colorscheme iceberg
 
+colorscheme onedark
+let g:onedark_termcolors=16
+
 " let g:lightline = { 'colorscheme': 'iceberg',
 " let g:lightline = { 'colorscheme': 'quantum',
-let g:lightline = { 'colorscheme': 'monokai_tasty',
+" let g:lightline = { 'colorscheme': 'monokai_tasty',
+let g:lightline = { 'colorscheme': 'onedark',
       \  'active': {
       \    'left': [ [ 'mode', 'paste' ],
       \              [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
