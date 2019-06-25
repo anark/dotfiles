@@ -4,7 +4,7 @@
   "suggest.enablePreview": true,
   "codeLens.enable": false,
   "snippets.priority": 150,
-  "javascript.suggest.enabled": false,
+  "javascript.suggest.enabled": true,
   "typescript.suggest.enabled": true,
   "typescript.preferences.noSemicolons": true
 }
