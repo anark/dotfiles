@@ -492,25 +492,25 @@ coc-lists@^1.1.12:
   resolved "https://registry.yarnpkg.com/coc-lists/-/coc-lists-1.1.12.tgz#2247de859230034790bfba91f2c3cb3618fc6c3a"
   integrity sha512-0F8lnfUkkuxGf2fEFYyKsr72Jrg2aXJymrqInKoNFqPgoC/27f35fwJLrrJEIpmvin9cvUF/xBMGlCDUzsWkDw==
 
-coc-prettier@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/coc-prettier/-/coc-prettier-1.1.2.tgz#fadede5de873f2d6c08d3134fc371eaa61cde957"
-  integrity sha512-nJMle0OGGHpFSVjXjuoPEj3gIb7L0wW9dNOQn2DbKOiTDDqDJ4p76z5K9SuECHPxChztfShy+YyyGS3rWzap+g==
+coc-prettier@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/coc-prettier/-/coc-prettier-1.1.3.tgz#bbac25f8cb652c82f675a90a8e97b6fdfcb7d190"
+  integrity sha512-idY6wbqE+lyptvFoCqrRSeoSrVpTstnLQjnEVFyNIffOksGE/7yAyFAqG1aiM+9dcnpAOMiPQrrcWCQfXh6dpQ==
   dependencies:
     prettier "^1.17.1"
     prettier-eslint "^8.8.2"
     prettier-stylelint "^0.4.2"
     prettier-tslint "^0.4.2"
 
-coc-snippets@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/coc-snippets/-/coc-snippets-2.1.1.tgz#596390d1df7b672767280aab9975e4b98be9c4f6"
-  integrity sha512-AyZziefLYYT7TiwipCxvcrzoaSd7b2J9rLkZkkASqY1fHXErFF/YNsz4W+YRHrWILPUeQhfbylLd7atIqQSoxQ==
+coc-snippets@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/coc-snippets/-/coc-snippets-2.1.2.tgz#0c69ee4bbf12b3e59df2741de5ea383029305292"
+  integrity sha512-w2nAmNL/Y4NLwBiflDsruCQglGArGZ2NNYXj7m5FDN/Kd2aTQZxYQ0jrbX/Bl3KQxWKRzVn/VYoBKD6dcZ+cMA==
 
-coc-tsserver@^1.3.9:
-  version "1.3.9"
-  resolved "https://registry.yarnpkg.com/coc-tsserver/-/coc-tsserver-1.3.9.tgz#1f1e8fb8a69c771a53df20ceee6d9cb335232efb"
-  integrity sha512-ALLK4fyqWX+3tEp6rgF9w8ie0XfnsqZufEOUvj1PiLAdNLF9q84TeQJu2A6Dwt9+DNORuvaw4aSQM9JZqTEsbA==
+coc-tsserver@^1.3.10:
+  version "1.3.10"
+  resolved "https://registry.yarnpkg.com/coc-tsserver/-/coc-tsserver-1.3.10.tgz#4f31b38f8e2338d2cb8b26e607e31aadcb5517a8"
+  integrity sha512-Tpa8Fsi+fTehqWrvBdJAb+jY1KQx7dcdolHyXdG5+4oF9FEGbLFaxfKcgqk7gKU8U/EgocFkqPKeaNdnD1DHAg==
   dependencies:
     typescript "3.5.1"
 
