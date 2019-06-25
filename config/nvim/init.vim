@@ -40,8 +40,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 
 " File browsing
-Plug 'scrooloose/nerdtree', { 'on': [ 'NERDTreeToggle', 'NERDTreeFind' ] }
-Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': [ 'NERDTreeToggle', 'NERDTreeFind' ] }
+Plug 'scrooloose/nerdtree'
 
 " File types
 Plug 'sheerun/vim-polyglot'                 "autoloading of syntax highlighting
