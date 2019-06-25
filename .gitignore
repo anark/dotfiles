@@ -2,11 +2,7 @@ vim/backup
 tmux/plugins
 tmux/tmux/resurrect
 node_modules
-config/*
-!config/nvim
-!config/coc
-config/coc/*
-!config/coc/extensions
-config/coc/extensions/*
-!config/coc/extensions/package.json
-!config/coc/extensions/yarn.lock
+config/configstore
+config/coc/extensions
+config/coc/memos.json
+config/coc/history.json
