@@ -38,7 +38,7 @@
   default = tracking
 
 [core]
-  editor = vim
+	editor = nvim
   excludesfile = ~/.gitignore
 
 [credential]
