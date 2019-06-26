@@ -2697,9 +2697,9 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>269 109 796 486 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 69 1440 808 0 0 1440 877 </string>
+	<string>14 25 1810 1392 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>176 92 394 398 0 0 1440 877 </string>
+	<string>0 25 1440 852 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>197 47 394 420 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
@@ -2707,6 +2707,8 @@
 		<dict>
 			<key>ASCII Anti Aliased</key>
 			<true/>
+			<key>ASCII Ligatures</key>
+			<false/>
 			<key>Allow Title Reporting</key>
 			<false/>
 			<key>Ambiguous Double Width</key>
@@ -3341,11 +3343,11 @@
 			<key>Name</key>
 			<string>Default</string>
 			<key>Non Ascii Font</key>
-			<string>Monaco 12</string>
+			<string>HackNerdFontComplete-Regular 13</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Monaco 13</string>
+			<string>Monaco 15</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -3571,19 +3573,24 @@
 		<string>3.2.9</string>
 		<string>3.3.0beta13</string>
 	</array>
+	<key>NoSyncBFPRecents</key>
+	<array>
+		<string>Hack Nerd Font</string>
+		<string>Monaco</string>
+	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1440, 900}}</string>
+		<string>{{0, 0}, {2560, 1440}}</string>
 		<key>topLeft</key>
-		<string>{398, 716}</string>
+		<string>{1382, 1137}</string>
 	</dict>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>27295E1A-E03D-4F7B-93F1-D1224DDDD972</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>1</integer>
+	<integer>7</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>

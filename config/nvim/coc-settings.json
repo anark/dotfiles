@@ -1,6 +1,6 @@
 {
   //"coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "typescriptreact"],
-  "suggest.noselect": false,
+  "suggest.noselect": true,
   "suggest.enablePreview": true,
   "codeLens.enable": false,
   "snippets.priority": 150,
