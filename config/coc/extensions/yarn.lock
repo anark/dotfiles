@@ -487,30 +487,30 @@ coc-json@^1.2.2:
   resolved "https://registry.yarnpkg.com/coc-json/-/coc-json-1.2.2.tgz#f499f583a4831e1a362d8c37e547245605ccd32e"
   integrity sha512-H3Xk1D4Y40VMkwM4UDjedFMelRZWGzEBuU4r2iYE07gepYPVGzqzTlqCSWqOLeH4CXY52gF/QkWrOn7AY6CFaw==
 
-coc-lists@^1.1.12:
-  version "1.1.12"
-  resolved "https://registry.yarnpkg.com/coc-lists/-/coc-lists-1.1.12.tgz#2247de859230034790bfba91f2c3cb3618fc6c3a"
-  integrity sha512-0F8lnfUkkuxGf2fEFYyKsr72Jrg2aXJymrqInKoNFqPgoC/27f35fwJLrrJEIpmvin9cvUF/xBMGlCDUzsWkDw==
+coc-lists@^1.1.13:
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/coc-lists/-/coc-lists-1.1.13.tgz#167c260c8f1d2415966c0d6d3c6e5f642c02adea"
+  integrity sha512-biT/iJHUaNBkL1IuktiJxL/v0JaWPSNRtZU0eFZwZK5PN6RDtJ8bmaNfxUA6BnKwupC4nuMnSKmcsXb3Mw6cnA==
 
-coc-prettier@^1.1.3:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/coc-prettier/-/coc-prettier-1.1.3.tgz#bbac25f8cb652c82f675a90a8e97b6fdfcb7d190"
-  integrity sha512-idY6wbqE+lyptvFoCqrRSeoSrVpTstnLQjnEVFyNIffOksGE/7yAyFAqG1aiM+9dcnpAOMiPQrrcWCQfXh6dpQ==
+coc-prettier@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/coc-prettier/-/coc-prettier-1.1.5.tgz#148310680ca53549eda5ac64706731330479fcf0"
+  integrity sha512-fzCoB8081jvFnlB0/Gsj1bJsk98UuwwaJSHwrzp0hOwYkGllzLlbji/K91lBSIwLRMqN+MRVDh4TH5PTIWjgMw==
   dependencies:
     prettier "^1.17.1"
     prettier-eslint "^8.8.2"
     prettier-stylelint "^0.4.2"
     prettier-tslint "^0.4.2"
 
-coc-snippets@^2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/coc-snippets/-/coc-snippets-2.1.2.tgz#0c69ee4bbf12b3e59df2741de5ea383029305292"
-  integrity sha512-w2nAmNL/Y4NLwBiflDsruCQglGArGZ2NNYXj7m5FDN/Kd2aTQZxYQ0jrbX/Bl3KQxWKRzVn/VYoBKD6dcZ+cMA==
+coc-snippets@^2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/coc-snippets/-/coc-snippets-2.1.5.tgz#1b9cedc8ed9985d3e3cc292ca317df28468135ce"
+  integrity sha512-tHi6z9dTPP7lFPztJFpZ42qUydGJznCqhVj2RSHetvCd5uL/r/dIGnPIc2Cs0LYHA1v6o3pwMeBoJ8tgHn1gvA==
 
-coc-tsserver@^1.3.10:
-  version "1.3.10"
-  resolved "https://registry.yarnpkg.com/coc-tsserver/-/coc-tsserver-1.3.10.tgz#4f31b38f8e2338d2cb8b26e607e31aadcb5517a8"
-  integrity sha512-Tpa8Fsi+fTehqWrvBdJAb+jY1KQx7dcdolHyXdG5+4oF9FEGbLFaxfKcgqk7gKU8U/EgocFkqPKeaNdnD1DHAg==
+coc-tsserver@^1.3.12:
+  version "1.3.12"
+  resolved "https://registry.yarnpkg.com/coc-tsserver/-/coc-tsserver-1.3.12.tgz#bdeef41d9811c5558ea58d8228313dacfadd7cdc"
+  integrity sha512-xYu2UVh6Gns2MN2s5AOdxJ2njuT8yB+RZrXlmBlws3JIP2HNSErQ/MjET0nRQ6sVm2cQjjCTwvIRh3MIiYUOTw==
   dependencies:
     typescript "3.5.1"
 

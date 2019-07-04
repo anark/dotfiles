@@ -16,7 +16,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-surround'
 
 " In Probationary period
-Plug 'jiangmiao/auto-pairs'                 " Auto close parenthesis
+" Plug 'jiangmiao/auto-pairs'                 " Auto close parenthesis
 Plug 'tpope/vim-endwise'                        " Auto ruby methods with ends
 
 " Not needed when using coc
@@ -55,8 +55,10 @@ set smartcase                " Smarter searchin based on case if we search with 
 set clipboard+=unnamed       " Yank to the system clipboard. 'unnamed' works in neovim _and_ MacVim. Makes nvim very slow to start :(
 set undofile                 " Use undo files for persistent undo
 
-" Ag for grepping (https://github.com/ggreer/the_silver_searcher)
-if executable('ag')
+" Prefer rg > ag > ack
+if executable('rg')
+  let g:ackprg = 'rg -S --no-heading --vimgrep'
+elseif executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 

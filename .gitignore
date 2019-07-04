@@ -6,6 +6,8 @@ config/configstore
 config/coc/extensions
 config/coc/memos.json
 config/coc/history.json
+config/coc/lists
+config/coc/snippets-mru
 config/nvim/.netrwhist
 config/coc/commands
 config/coc/mru
