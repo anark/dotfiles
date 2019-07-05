@@ -6,5 +6,11 @@
   "snippets.priority": 150,
   "javascript.suggest.enabled": true,
   "typescript.suggest.enabled": true,
-  "typescript.preferences.noSemicolons": true
+  "typescript.preferences.noSemicolons": true,
+  "diagnostic.warningSign": "⚠",
+  "diagnostic.hintSign": ">>",
+  "diagnostic.infoSign": ">>",
+  "diagnostic.errorSign": ">>",
+  "diagnostic.signOffset": 1000,
+  "git.signOffset": 99
 }

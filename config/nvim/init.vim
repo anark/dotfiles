@@ -16,7 +16,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-surround'
 
 " In Probationary period
-" Plug 'jiangmiao/auto-pairs'                 " Auto close parenthesis
+Plug 'jiangmiao/auto-pairs'                     " Auto close parenthesis
 Plug 'tpope/vim-endwise'                        " Auto ruby methods with ends
 
 " Not needed when using coc
