@@ -49,13 +49,6 @@ Plug 'HerringtonDarkholme/yats.vim'
 
 call plug#end()
 
-" Set shell to sh and not fish because dispatch is really slow with fish.
-runtime! plugin/sensible.vim
-runtime! plugin/opinion.vim
-if &shell =~# 'fish$'
-  set shell=/bin/sh
-endif
-
 let mapleader=';'
 set updatetime=100
 
