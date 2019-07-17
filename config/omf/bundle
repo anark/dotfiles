@@ -1,6 +1,5 @@
 package brew
 package foreign-env
-package nvm
 package rbenv
 theme bobthefish
 theme default
