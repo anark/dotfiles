@@ -4,7 +4,7 @@ set nocompatible
 " --------------------------------
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'tpope/vim-sensible'
-Plug 'rstacruz/vim-opinion'
+Plug 'rstacruz/vim-opinion'                 " TODO: Remove this and add what I want from it
 Plug 'tpope/vim-fugitive'                   " Git utilities
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } "fuzzy file finder
@@ -49,6 +49,13 @@ Plug 'HerringtonDarkholme/yats.vim'
 
 call plug#end()
 
+" Set shell to sh and not fish because dispatch is really slow with fish.
+runtime! plugin/sensible.vim
+runtime! plugin/opinion.vim
+if &shell =~# 'fish$'
+  set shell=/bin/sh
+endif
+
 let mapleader=';'
 set updatetime=100
 
@@ -76,6 +83,12 @@ tnoremap <expr> jk (&filetype == "fzf") ? "<Esc>" : "<C-\><C-n>"
 " --------------------------------------------------------------------
 autocmd FileType typescript,javascript,typescript.tsx map <buffer> <silent> <C-]> <Plug>(coc-definition)
 autocmd FileType typescript,javascript,typescript.tsx map <buffer> <silent> <leader>r <Plug>(coc-rename)
+
+"PROBATIONARY
+map <silent> <Leader>x <Plug>(coc-codeaction-selected)
+nnoremap <silent> K :call CocAction('doHover')<CR>
+" autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+" map <silent> <Leader>z <Plug>(coc-codelens-action)
 
 " Create :Prettier command to format file
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -231,3 +244,10 @@ set number
 " Font Stuff
 set linespace=2
 " TODO:  Set nice font either here or in Gvimrc
+
+" Always enter insert mode when switching to a terminal
+autocmd BufWinEnter,WinEnter,TermOpen term://* startinsert
+tnoremap <expr> <C-h> (&filetype == "fzf") ? "<C-h>" : "<C-\><C-n><C-w>h"
+tnoremap <expr> <C-j> (&filetype == "fzf") ? "<C-j>" : "<C-\><C-n><C-w>j"
+tnoremap <expr> <C-k> (&filetype == "fzf") ? "<C-k>" : "<C-\><C-n><C-w>k"
+tnoremap <expr> <C-l> (&filetype == "fzf") ? "<C-l>" : "<C-\><C-n><C-w>l"
