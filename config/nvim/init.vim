@@ -7,7 +7,8 @@ Plug 'tpope/vim-sensible'
 Plug 'rstacruz/vim-opinion'                 " TODO: Remove this and add what I want from it
 Plug 'tpope/vim-fugitive'                   " Git utilities
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } "fuzzy file finder
+
+Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'                     "fuzzy file finder
 
 Plug 'tpope/vim-commentary'                 "gc for commenting code blocks
