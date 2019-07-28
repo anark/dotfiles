@@ -38,7 +38,7 @@ Plug 'joshdick/onedark.vim'
 " Plug 'noahfrederick/vim-noctu'
 
 " Completion
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " File browsing
 Plug 'scrooloose/nerdtree'
@@ -75,6 +75,7 @@ tnoremap <expr> jk (&filetype == "fzf") ? "<Esc>" : "<C-\><C-n>"
 " Autocomplete and COC
 " --------------------------------------------------------------------
 autocmd FileType typescript,javascript,typescript.tsx map <buffer> <silent> <C-]> <Plug>(coc-definition)
+autocmd FileType typescript,javascript,typescript.tsx map <buffer> <silent> <C-[> <Plug>(coc-references)
 autocmd FileType typescript,javascript,typescript.tsx map <buffer> <silent> <leader>r <Plug>(coc-rename)
 
 "PROBATIONARY

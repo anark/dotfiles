@@ -8,6 +8,7 @@
   "typescript.suggest.enabled": true,
   "typescript.preferences.noSemicolons": true,
   "diagnostic.warningSign": "⚠",
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "diagnostic.hintSign": ">>",
   "diagnostic.infoSign": ">>",
   "diagnostic.errorSign": ">>",
