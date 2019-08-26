@@ -7,6 +7,7 @@
   "javascript.suggest.enabled": true,
   "typescript.suggest.enabled": true,
   "typescript.preferences.noSemicolons": true,
+  "javascript.preferences.noSemicolons": true,
   "diagnostic.warningSign": "⚠",
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "diagnostic.hintSign": ">>",

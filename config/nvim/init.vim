@@ -54,7 +54,7 @@ let mapleader=';'
 set updatetime=100
 
 set smartcase                " Smarter searchin based on case if we search with case
-set clipboard+=unnamed       " Yank to the system clipboard. 'unnamed' works in neovim _and_ MacVim. Makes nvim very slow to start :(
+set clipboard+=unnamed       " Yank to the system clipboard. 'unnamed' works in neovim _and_ MacVim.
 set undofile                 " Use undo files for persistent undo
 
 " Prefer rg > ag > ack
@@ -78,6 +78,7 @@ tnoremap <expr> jk (&filetype == "fzf") ? "<Esc>" : "<C-\><C-n>"
 autocmd FileType typescript,javascript,typescript.tsx map <buffer> <silent> <C-]> <Plug>(coc-definition)
 autocmd FileType typescript,javascript,typescript.tsx map <buffer> <silent> <C-[> <Plug>(coc-references)
 autocmd FileType typescript,javascript,typescript.tsx map <buffer> <silent> <leader>r <Plug>(coc-rename)
+map <silent> <Leader>p <Plug>(coc-format-selected)<CR>
 
 "PROBATIONARY
 map <silent> <Leader>x <Plug>(coc-codeaction-selected)
@@ -219,6 +220,7 @@ endif
 
 colorscheme onedark
 let g:onedark_termcolors=16
+let g:onedark_terminal_italics=1
 
 " let g:lightline = { 'colorscheme': 'iceberg',
 " let g:lightline = { 'colorscheme': 'quantum',
@@ -238,7 +240,6 @@ set number
 
 " Font Stuff
 set linespace=2
-" TODO:  Set nice font either here or in Gvimrc
 
 " Always enter insert mode when switching to a terminal
 autocmd BufWinEnter,WinEnter,TermOpen term://* startinsert
@@ -246,3 +247,25 @@ tnoremap <expr> <C-h> (&filetype == "fzf") ? "<C-h>" : "<C-\><C-n><C-w>h"
 tnoremap <expr> <C-j> (&filetype == "fzf") ? "<C-j>" : "<C-\><C-n><C-w>j"
 tnoremap <expr> <C-k> (&filetype == "fzf") ? "<C-k>" : "<C-\><C-n><C-w>k"
 tnoremap <expr> <C-l> (&filetype == "fzf") ? "<C-l>" : "<C-\><C-n><C-w>l"
+
+
+" Don't open files in nerdtree buffer
+autocmd FileType nerdtree let t:nerdtree_winnr = bufwinnr('%')
+autocmd BufWinEnter * call PreventBuffersInNERDTree()
+
+function! PreventBuffersInNERDTree()
+  if bufname('#') =~ 'NERD_tree' && bufname('%') !~ 'NERD_tree'
+    \ && exists('t:nerdtree_winnr') && bufwinnr('%') == t:nerdtree_winnr
+    \ && &buftype == '' && !exists('g:launching_fzf')
+    let bufnum = bufnr('%')
+    close
+    exe 'b ' . bufnum
+  endif
+  if exists('g:launching_fzf') | unlet g:launching_fzf | endif
+endfunction
+
+" Open scratch when only nerdtree is left
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | botright vnew | wincmd h | vertical resize 40 | endif
+
+" Quit nerdtree on file open
+" let NERDTreeQuitOnOpen=1
