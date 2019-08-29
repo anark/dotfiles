@@ -2701,7 +2701,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>269 109 796 486 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 92 1274 785 0 0 1440 877 </string>
+	<string>0 54 1432 823 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 0 1440 900 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -3351,7 +3351,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>DankMono-Regular 15</string>
+			<string>DankMono-Regular 16</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -3585,11 +3585,12 @@
 	</array>
 	<key>NoSyncBFPFavorites</key>
 	<array>
-		<string>FuraCode Nerd Font</string>
+		<string>Dank Mono</string>
+		<string>Monaco</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
-		<string>Hack Nerd Font</string>
+		<string>Monaco</string>
 		<string>Dank Mono</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
@@ -3604,7 +3605,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>27295E1A-E03D-4F7B-93F1-D1224DDDD972</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>45</integer>
+	<integer>46</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
