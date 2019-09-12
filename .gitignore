@@ -11,3 +11,4 @@ config/coc/snippets-mru
 config/nvim/.netrwhist
 config/coc/commands
 config/coc/mru
+config/.mono

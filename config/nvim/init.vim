@@ -46,7 +46,6 @@ Plug 'scrooloose/nerdtree'
 
 " File types
 Plug 'sheerun/vim-polyglot'                 "autoloading of syntax highlighting
-Plug 'HerringtonDarkholme/yats.vim'
 
 call plug#end()
 
