@@ -13,3 +13,7 @@ tunnels:
     proto: http
     subdomain: ollieorder
     bind_tls: true
+  goodproblems:
+    addr: localhost:3001
+    proto: http
+    subdomain: goodproblems

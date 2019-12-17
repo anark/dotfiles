@@ -74,10 +74,11 @@ tnoremap <expr> jk (&filetype == "fzf") ? "<Esc>" : "<C-\><C-n>"
 
 " Autocomplete and COC
 " --------------------------------------------------------------------
-autocmd FileType typescript,javascript,typescript.tsx map <buffer> <silent> <C-]> <Plug>(coc-definition)
-autocmd FileType typescript,javascript,typescript.tsx map <buffer> <silent> <C-[> <Plug>(coc-references)
-autocmd FileType typescript,javascript,typescript.tsx map <buffer> <silent> <leader>r <Plug>(coc-rename)
-map <silent> <Leader>p <Plug>(coc-format-selected)<CR>
+autocmd FileType typescript,javascript,typescriptreact map <buffer> <silent> <C-]> <Plug>(coc-definition)
+autocmd FileType typescript,javascript,typescriptreact map <buffer> <silent> <C-[> <Plug>(coc-references)
+autocmd FileType typescript,javascript,typescriptreact map <buffer> <silent> <leader>r <Plug>(coc-rename)
+map <silent> <Leader>p :Prettier <CR>
+map <silent> <Leader>P <Plug>(coc-format-selected)<CR>
 
 "PROBATIONARY
 map <silent> <Leader>x <Plug>(coc-codeaction-selected)
@@ -264,7 +265,10 @@ function! PreventBuffersInNERDTree()
 endfunction
 
 " Open scratch when only nerdtree is left
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | botright vnew | wincmd h | vertical resize 40 | endif
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | botright vnew | wincmd h | vertical resize 40 | endif
 
 " Quit nerdtree on file open
 " let NERDTreeQuitOnOpen=1
+
+" Custom dispatch settings for file types
+" autocmd BufRead,BufNewFile */cypress/* let b:dispatch = 'npx run cypress %'
