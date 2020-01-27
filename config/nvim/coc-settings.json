@@ -14,5 +14,16 @@
   "diagnostic.infoSign": ">>",
   "diagnostic.errorSign": ">>",
   "diagnostic.signOffset": 1000,
-  "git.signOffset": 99
+  "git.signOffset": 99,
+  "languageserver": {
+    "sorbet": {
+      "command": "srb",
+      "args": ["tc", "--typed", "true", "--enable-all-experimental-lsp-features", "--lsp", "--disable-watchman", "--dir", "."],
+      "filetypes": ["ruby"],
+      "rootPatterns": ["sorbet/config"],
+      "initializationOptions": {},
+      "settings": {}
+    }
+  },
+  "prettier.semi": false
 }

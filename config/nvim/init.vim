@@ -27,6 +27,8 @@ Plug 'tpope/vim-dispatch'
 
 " Language specific
 Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
+Plug 'tpope/vim-bundler'
 
 " Theming and colours
 " Plug 'cocopon/iceberg.vim'
@@ -47,6 +49,8 @@ Plug 'scrooloose/nerdtree'
 " File types
 Plug 'sheerun/vim-polyglot'                 "autoloading of syntax highlighting
 
+Plug 'ntpeters/vim-better-whitespace'
+
 call plug#end()
 
 let mapleader=';'
@@ -55,6 +59,9 @@ set updatetime=100
 set smartcase                " Smarter searchin based on case if we search with case
 set clipboard+=unnamed       " Yank to the system clipboard. 'unnamed' works in neovim _and_ MacVim.
 set undofile                 " Use undo files for persistent undo
+
+" let g:strip_whitespace_on_save = 1
+" let g:strip_whitespace_confirm=0
 
 " Prefer rg > ag > ack
 if executable('rg')
@@ -74,9 +81,9 @@ tnoremap <expr> jk (&filetype == "fzf") ? "<Esc>" : "<C-\><C-n>"
 
 " Autocomplete and COC
 " --------------------------------------------------------------------
-autocmd FileType typescript,javascript,typescriptreact map <buffer> <silent> <C-]> <Plug>(coc-definition)
-autocmd FileType typescript,javascript,typescriptreact map <buffer> <silent> <C-[> <Plug>(coc-references)
-autocmd FileType typescript,javascript,typescriptreact map <buffer> <silent> <leader>r <Plug>(coc-rename)
+map <silent> <C-]> <Plug>(coc-definition)
+map <silent> <C-[> <Plug>(coc-references)
+map <silent> <leader>r <Plug>(coc-rename)
 map <silent> <Leader>p :Prettier <CR>
 map <silent> <Leader>P <Plug>(coc-format-selected)<CR>
 
@@ -133,7 +140,7 @@ let g:coc_snippet_next = '<tab>'
 let g:NERDTreeAutoDeleteBuffer=1
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeWinSize=40
-let g:NERDTreeRespectWildIgnore = 1
+" let g:NERDTreeRespectWildIgnore = 1
 
 function! ToggleNerdTree()
   if @% !=# '' && (!exists('g:NERDTree') || (g:NERDTree.ExistsForTab() && !g:NERDTree.IsOpen()))
@@ -225,15 +232,7 @@ let g:onedark_terminal_italics=1
 " let g:lightline = { 'colorscheme': 'iceberg',
 " let g:lightline = { 'colorscheme': 'quantum',
 " let g:lightline = { 'colorscheme': 'monokai_tasty',
-let g:lightline = { 'colorscheme': 'onedark',
-      \  'active': {
-      \    'left': [ [ 'mode', 'paste' ],
-      \              [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
-      \  },
-      \  'component_function': {
-      \    'cocstatus': 'coc#status'
-      \  },
-      \}
+let g:lightline = { 'colorscheme': 'onedark' }
 
 " Always show line numbers
 set number
