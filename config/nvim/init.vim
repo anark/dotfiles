@@ -234,6 +234,16 @@ let g:onedark_terminal_italics=1
 " let g:lightline = { 'colorscheme': 'monokai_tasty',
 let g:lightline = { 'colorscheme': 'onedark' }
 
+" let g:lightline = { 'colorscheme': 'onedark',
+"      \  'active': {
+"      \    'left': [ [ 'mode', 'paste' ],
+"      \              [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
+"      \  },
+"      \  'component_function': {
+"      \    'cocstatus': 'coc#status'
+"      \  },
+"      \}
+
 " Always show line numbers
 set number
 

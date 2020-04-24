@@ -1,6 +1,4 @@
 package bass
-package brew
 package https://github.com/FabioAntunes/fish-nvm
-package rbenv
 theme bobthefish
 theme default
