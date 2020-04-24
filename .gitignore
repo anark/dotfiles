@@ -12,3 +12,4 @@ config/nvim/.netrwhist
 config/coc/commands
 config/coc/mru
 config/.mono
+config/gh/config.yml
